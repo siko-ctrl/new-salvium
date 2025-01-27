@@ -1,0 +1,90 @@
+.downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.download-card {
+    background: linear-gradient(to bottom, rgba(40, 40, 40, 0.95), rgba(30, 30, 30, 0.98));
+    border: 1px solid rgba(0, 191, 165, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 191, 165, 0.1);
+    border-color: rgba(0, 191, 165, 0.3);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.card-content {
+    padding: 1.25rem;
+}
+
+.download-title {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: var(--font-heading);
+}
+
+.sha-text {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.75rem;
+    border-radius: 2px;
+    font-size: 0.875rem;
+    color: rgba(224, 224, 224, 0.8);
+    margin: 0.75rem 0;
+    word-break: break-all;
+    line-height: 1.4;
+}
+
+.card-link {
+    margin-top: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #40E0D0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.card-link:hover {
+    color: #2fb5a0;
+}
+
+.download-tag {
+    background: rgba(0, 191, 165, 0.1);
+    color: #40E0D0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+    font-size: 0.875rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .downloads-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .downloads-grid {
+        gap: 1rem;
+    }
+}

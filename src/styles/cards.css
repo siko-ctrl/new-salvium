@@ -1,0 +1,101 @@
+.ecosystem-card {
+    background: linear-gradient(to bottom, rgba(40, 40, 40, 0.95), rgba(30, 30, 30, 0.98));
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.ecosystem-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--color-border);
+    border-color: var(--color-primary);
+}
+
+.ecosystem-card .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+    display: block;
+    opacity: 1;
+}
+
+.ecosystem-card .card-content {
+    padding: 1.5rem;
+    padding-top: 1rem;
+}
+
+.ecosystem-card .card-tag {
+    background: rgba(0, 191, 165, 0.1);
+    color: var(--color-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+    font-size: 0.875rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-body);
+}
+
+.ecosystem-card .card-title {
+    font-family: var(--font-title);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.ecosystem-card .card-description {
+    font-family: var(--font-body);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.ecosystem-card .card-link {
+    font-family: var(--font-title);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.ecosystem-card .card-link i {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.ecosystem-card .card-link:hover {
+    color: var(--color-primary-dark);
+}
+
+.ecosystem-card .card-link:hover i {
+    transform: translateY(2px);
+}
+
+.ecosystem-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .card-image {
+        height: 200px;
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+    }
+}

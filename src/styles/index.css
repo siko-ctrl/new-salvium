@@ -1,0 +1,69 @@
+:root {
+    /* Primary Colors */
+    --color-primary: #40E0D0;
+    --color-primary-dark: #009688;
+
+    /* Background Colors */
+    --color-bg-dark: #1e1e1e;
+    --color-bg-darker: #1e1e1e;
+    --color-bg-header: #1e1e1e;
+
+    /* Text Colors */
+    --color-text: #e0e0e0;
+    --color-text-light: #e0e0e0;
+    --color-text-lighter: #b0b0b0;
+
+    /* Accent Colors */
+    --color-accent: #40E0D0;
+    --color-accent-light: #80cbc4;
+
+    /* Border Colors */
+    --color-border: rgba(0, 191, 165, 0.15);
+    --color-border-light: rgba(0, 191, 165, 0.05);
+
+    /* Font */
+    --font-title: 'Josefin Sans', sans-serif;
+    --font-body: 'Inter', Arial, sans-serif;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    padding-top: 36px;
+    font-family: var(--font-body);
+    background-color: var(--color-bg-dark);
+    color: var(--color-text);
+    line-height: 1.6;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6, .gradient-text {
+    font-family: var(--font-title);
+}
+
+p, a, span, div, button {
+    font-family: var(--font-body);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1rem;
+    }
+}

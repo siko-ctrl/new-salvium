@@ -1,0 +1,43 @@
+.gradient-text {
+    background: linear-gradient(45deg, #40E0D0, #2fb5a5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #40E0D0, #2fb5a5);
+    color: white !important;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(64, 224, 208, 0.25);
+}
+
+.mobile-center {
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .mobile-center {
+        text-align: center;
+    }
+    
+    .mobile-smaller-text {
+        font-size: 2.5rem;
+    }
+    
+    .mobile-full {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-top: 1rem;
+    }
+}
+
+.hero-text {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
