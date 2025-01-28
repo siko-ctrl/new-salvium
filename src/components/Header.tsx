@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileDropdowns, setMobileDropdowns] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -21,6 +22,13 @@ const Header = () => {
 
   const toggleDropdown = (dropdownName: string) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
+  };
+
+  const toggleMobileDropdown = (category: string) => {
+    setMobileDropdowns(prev => ({
+      ...prev,
+      [category]: !prev[category]
+    }));
   };
 
   const navigationItems = {
@@ -129,32 +137,48 @@ const Header = () => {
           <div className="md:hidden fixed inset-x-0 top-[56px] bg-[rgba(30,30,30,0.98)] backdrop-blur-md border-t border-gray-800">
             <div className="px-4 py-6 max-h-[calc(100vh-56px)] overflow-y-auto">
               {Object.entries(navigationItems).map(([category, items]) => (
-                <div key={category} className="mb-6 last:mb-0">
-                  <h3 className="text-[#40E0D0] font-semibold mb-3 text-lg font-['Josefin_Sans']">{category}</h3>
-                  <div className="space-y-3 pl-2">
-                    {items.map((item) => (
-                      item.path.startsWith('http') ? (
-                        <a
-                          key={item.label}
-                          href={item.path}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block text-gray-200 hover:text-[#40E0D0] transition-colors py-1"
-                        >
-                          {item.label}
-                        </a>
-                      ) : (
-                        <Link
-                          key={item.label}
-                          to={item.path}
-                          className="block text-gray-200 hover:text-[#40E0D0] transition-colors py-1"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
-                      )
-                    ))}
-                  </div>
+                <div key={category} className="mb-4 last:mb-0">
+                  <button
+                    onClick={() => toggleMobileDropdown(category)}
+                    className="w-full flex items-center justify-between py-2 text-[#40E0D0] font-semibold"
+                  >
+                    <span>{category}</span>
+                    <svg
+                      className={`w-5 h-5 transition-transform ${mobileDropdowns[category] ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {mobileDropdowns[category] && (
+                    <div className="pl-4 mt-2 space-y-2">
+                      {items.map((item) => (
+                        item.path.startsWith('http') ? (
+                          <a
+                            key={item.label}
+                            href={item.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block text-gray-200 hover:text-[#40E0D0] transition-colors py-2"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.label}
+                          </a>
+                        ) : (
+                          <Link
+                            key={item.label}
+                            to={item.path}
+                            className="block text-gray-200 hover:text-[#40E0D0] transition-colors py-2"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        )
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
