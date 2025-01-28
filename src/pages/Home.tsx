@@ -16,31 +16,31 @@ const Home = () => {
   return (
     <main className="relative">
       {/* Hero Section */}
-      <section className="relative bg-[#1e1e1e] overflow-hidden pt-8">
+      <section className="relative bg-[#1e1e1e] overflow-hidden pt-16 min-h-[90vh] flex items-center">
         <div className="absolute inset-0">
           <img src="/new-salvium/images/wide-hero-1024.webp" alt="Hero Background" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-75"></div>
         </div>
-        <div className="relative z-10 py-16 lg:py-24">
+        <div className="relative z-10 w-full">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="hero-content text-left mobile-center" data-aos="fade-right">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 mobile-smaller-text text-white !opacity-100 hero-text">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="hero-content text-center lg:text-left" data-aos="fade-right">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white !opacity-100">
                   The Future of <span className="text-[#40E0D0]">Private DeFi</span>
                 </h1>
-                <p className="text-lg md:text-xl text-gray-100 mb-6 md:mb-8 !opacity-100 hero-text">
+                <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 md:mb-8 !opacity-100 max-w-xl mx-auto lg:mx-0">
                   Experience true financial privacy with Salvium's innovative blockchain technology.
                 </p>
-                <div className="hero-buttons mb-8 md:mb-12">
-                  <Link to="/about" className="btn-primary px-6 md:px-8 py-3 !text-white font-semibold inline-flex items-center justify-center mobile-full rounded-none">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 md:mb-12">
+                  <Link to="/about" className="px-6 md:px-8 py-3 border border-[#40E0D0] bg-[#40E0D0]/10 hover:bg-[#40E0D0]/20 text-white transition-colors font-semibold inline-flex items-center justify-center rounded-none w-full sm:w-auto">
                     Get Started
                   </Link>
-                  <a href="https://siko-ctrl.github.io/docs-salvium/" className="px-6 md:px-8 py-3 border border-[#40E0D0] text-white hover:bg-[#40E0D0]/10 transition-colors font-semibold inline-flex items-center justify-center mobile-full ml-4 rounded-none">
+                  <a href="https://siko-ctrl.github.io/docs-salvium/" className="px-6 md:px-8 py-3 border border-[#40E0D0] text-white hover:bg-[#40E0D0]/10 transition-colors font-semibold inline-flex items-center justify-center rounded-none w-full sm:w-auto">
                     Learn More
                   </a>
                 </div>
                 {/* Trust indicators */}
-                <div className="trust-indicators flex flex-wrap items-center gap-4 xs:gap-6 sm:gap-8 mt-6 sm:mt-8">
+                <div className="trust-indicators flex flex-wrap items-center justify-center lg:justify-start gap-4 xs:gap-6 sm:gap-8 mt-6 sm:mt-8">
                   <div className="trust-indicator flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#40E0D0]/5 transition-colors">
                     <img src="/new-salvium/images/lock-icon.svg" alt="Private" className="w-8 h-8 sm:w-9 sm:h-9" />
                     <span className="text-lg sm:text-xl font-medium whitespace-nowrap text-white opacity-100">Private</span>

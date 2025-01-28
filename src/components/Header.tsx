@@ -126,36 +126,38 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            {Object.entries(navigationItems).map(([category, items]) => (
-              <div key={category} className="mb-4">
-                <h3 className="text-[#40E0D0] font-semibold mb-2">{category}</h3>
-                <div className="space-y-2">
-                  {items.map((item) => (
-                    item.path.startsWith('http') ? (
-                      <a
-                        key={item.label}
-                        href={item.path}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-white hover:text-[#40E0D0] transition-colors"
-                      >
-                        {item.label}
-                      </a>
-                    ) : (
-                      <Link
-                        key={item.label}
-                        to={item.path}
-                        className="block text-white hover:text-[#40E0D0] transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    )
-                  ))}
+          <div className="md:hidden fixed inset-x-0 top-[56px] bg-[rgba(30,30,30,0.98)] backdrop-blur-md border-t border-gray-800">
+            <div className="px-4 py-6 max-h-[calc(100vh-56px)] overflow-y-auto">
+              {Object.entries(navigationItems).map(([category, items]) => (
+                <div key={category} className="mb-6 last:mb-0">
+                  <h3 className="text-[#40E0D0] font-semibold mb-3 text-lg font-['Josefin_Sans']">{category}</h3>
+                  <div className="space-y-3 pl-2">
+                    {items.map((item) => (
+                      item.path.startsWith('http') ? (
+                        <a
+                          key={item.label}
+                          href={item.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block text-gray-200 hover:text-[#40E0D0] transition-colors py-1"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <Link
+                          key={item.label}
+                          to={item.path}
+                          className="block text-gray-200 hover:text-[#40E0D0] transition-colors py-1"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      )
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
       </div>
