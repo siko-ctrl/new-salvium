@@ -23,7 +23,7 @@ const CTA = () => {
         </p>
         <Link 
           to="/download"
-          className="inline-block bg-gradient-to-r from-[#00DFB7] to-[#00B4D8] hover:from-[#00B4D8] hover:to-[#00DFB7] text-white font-semibold py-4 px-8 transition-all duration-300 transform hover:scale-105 hover:shadow-lg font-['Josefin_Sans']"
+          className="inline-block px-8 py-4 bg-[#40E0D0] hover:bg-[#40E0D0]/90 text-black font-semibold transition-colors text-lg"
         >
           Get Started Now
         </Link>

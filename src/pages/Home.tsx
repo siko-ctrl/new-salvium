@@ -32,10 +32,10 @@ const Home = () => {
                   Experience true financial privacy with Salvium's innovative blockchain technology.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 md:mb-12">
-                  <Link to="/about" className="px-6 md:px-8 py-3 border border-[#40E0D0] bg-[#40E0D0]/10 hover:bg-[#40E0D0]/20 text-white transition-colors font-semibold inline-flex items-center justify-center rounded-none w-full sm:w-auto">
+                  <Link to="/about" className="px-8 py-4 bg-[#40E0D0] hover:bg-[#40E0D0]/90 text-black font-semibold transition-colors text-lg inline-flex items-center justify-center w-full sm:w-auto">
                     Get Started
                   </Link>
-                  <a href="https://siko-ctrl.github.io/docs-salvium/" className="px-6 md:px-8 py-3 border border-[#40E0D0] text-white hover:bg-[#40E0D0]/10 transition-colors font-semibold inline-flex items-center justify-center rounded-none w-full sm:w-auto">
+                  <a href="https://siko-ctrl.github.io/docs-salvium/" className="px-8 py-4 bg-[#40E0D0] hover:bg-[#40E0D0]/90 text-black font-semibold transition-colors text-lg inline-flex items-center justify-center w-full sm:w-auto">
                     Learn More
                   </a>
                 </div>
